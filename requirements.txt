@@ -1,0 +1,4 @@
+pycryptodome
+cryptography
+pycipher
+hillcipher
