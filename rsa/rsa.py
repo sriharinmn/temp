@@ -1,23 +1,23 @@
-# Hardcoded values (example small RSA)
-p = 61
-q = 53
+# Small RSA values (easy to remember)
+p = 11
+q = 13
 
-n = p * q          # 3233
-phi = (p-1)*(q-1)  # 3120
+n = p * q          # 143
+phi = (p-1)*(q-1)  # 120
 
-e = 17             # public exponent
-d = 2753           # private exponent (precomputed)
+e = 7              # public key
+d = 103            # private key
 
-# Encryption: c = p^e mod n
+# Encryption : plain * e mod n
 def encrypt(plain):
     return pow(plain, e, n)
 
-# Decryption: p = c^d mod n
+# Decryption: cipher * d mod n
 def decrypt(cipher):
     return pow(cipher, d, n)
 
 # Example
-message = 65  # must be < n
+message = 9   # must be < 143
 
 cipher = encrypt(message)
 decrypted = decrypt(cipher)
